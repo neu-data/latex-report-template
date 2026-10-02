@@ -14,13 +14,26 @@
 
 ---
 
-See the compiled example: [`examples/example.pdf`](examples/example.pdf).
+## Two styles, one class
 
-## What you get
+Pick the look with a single class option:
 
-- **Cover page** — logo, document type, teal title and subtitle, "Prepared for" client, author, date, reference, version and classification, Neudata contact line
-- **Headers and footers** — document title and logo above a teal rule; classification, `Neudata | #ClearDataClearImpact` and `page / total` below
-- **Teal section headings** with a thin rule, blue sub-sections
+| `\documentclass[style1]{neudata}` — **default** | `\documentclass[style2]{neudata}` |
+|---|---|
+| Matches the **Neudata Quarto report** | Matches the **Neudata PowerPoint template** |
+| ![Style 1](examples/preview-style1.png) | ![Style 2](examples/preview-style2.png) |
+| Teal top strip, navy cover band with white title | White cover, teal title, logo and rule |
+| Navy headings over teal rules, blue sub-sections | Teal headings, blue sub-sections (Century Gothic look) |
+| Abstract box, dotted table of contents | Summary box |
+| Navy header row with striped table body | Navy header row with booktabs rules |
+| Footer: *Neudata Consulting Ltd · Insight. Impact. Innovation.* | Footer: *Neudata \| #ClearDataClearImpact* |
+| Example: [`main.tex`](main.tex) → [PDF](examples/example-style1.pdf) | Example: [`main-style2.tex`](main-style2.tex) → [PDF](examples/example-style2.pdf) |
+
+## What you get in both
+
+- **Cover page** — logo, title and subtitle, "Prepared for" client, author and affiliation, date, reference, version, classification and Neudata contact line
+- **Headers and footers** — document title and logo above a teal rule; page `n / total`
+- **`\abstract{}`** printed as a summary box after the cover
 - **`keyfindings`** and **`neudatanote`** boxes
 - **Navy table header rows** with `\neudataheader` and `\neudatath{}`
 - **Closing copyright page** with `\neudatacopyrightpage`
@@ -29,6 +42,8 @@ See the compiled example: [`examples/example.pdf`](examples/example.pdf).
 ## Use it on Overleaf
 
 Click **Open in Overleaf** above, or download [`overleaf.zip`](overleaf.zip) and use **New Project → Upload Project**. Overleaf's default **pdfLaTeX** compiler and biber are used automatically.
+
+The project contains both examples. `main.tex` (style 1) compiles by default; to see style 2, open **Menu → Main document** and choose `main-style2.tex`, or change `style1` to `style2` in the first line of `main.tex`.
 
 ## Use it locally
 
@@ -41,7 +56,7 @@ latexmk -pdf main.tex
 ## Front matter
 
 ```latex
-\documentclass[report]{neudata}       % report | proposal | note, plus draft, nocover
+\documentclass[style1, report]{neudata}   % style1 | style2; report | proposal | note; draft; nocover
 
 \title{Report Title}
 \subtitle{Short descriptive subtitle}
@@ -51,6 +66,7 @@ latexmk -pdf main.tex
 \version{1.0}
 \confidentiality{Confidential}
 % \date{29-04-2026}                   % defaults to today, DD-MM-YYYY
+bstract{Executive summary shown in a box after the cover.}
 
 \begin{document}
 \maketitle

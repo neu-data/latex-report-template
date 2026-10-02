@@ -1,10 +1,10 @@
 % ---------------------------------------------------------------------------
-% Neudata Consulting Ltd — report template, STYLE 1 (Overleaf ready)
-% Matches the Neudata Quarto report: teal strip, navy cover band, striped tables.
-% For the PowerPoint-matching look, use [style2] — see main-style2.tex.
+% Neudata Consulting Ltd — report template, STYLE 2 (Overleaf ready)
+% Matches the Neudata PowerPoint template: white cover, teal headings,
+% "Neudata | #ClearDataClearImpact" footer. For the Quarto look see main.tex.
 % Other class options: report | proposal | note, draft, nocover
 % ---------------------------------------------------------------------------
-\documentclass[style1, report]{neudata}
+\documentclass[style2, report]{neudata}
 
 \usepackage[style=authoryear, backend=biber, maxcitenames=2]{biblatex}
 \addbibresource{references.bib}
@@ -54,13 +54,16 @@ Table~\ref{tab:summary} summarises the example data.
   \caption{Mean tooth length by supplement and dose (example data).}
   \label{tab:summary}
   \begin{tabular}{lrr}
+    \toprule
     \neudataheader \neudatath{Supplement} & \neudatath{Dose (mg/day)} & \neudatath{Mean length} \\
+    \midrule
     OJ & 0.5 & 13.2 \\
     VC & 0.5 &  8.0 \\
     OJ & 1.0 & 22.7 \\
     VC & 1.0 & 16.8 \\
     OJ & 2.0 & 26.1 \\
     VC & 2.0 & 26.1 \\
+    \bottomrule
   \end{tabular}
 \end{table}
 
