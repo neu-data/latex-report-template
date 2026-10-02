@@ -291,10 +291,10 @@
 \newcommand{\neudatacopyrightpage}{%
   \clearpage\thispagestyle{plain}
   \vspace*{\fill}
-  \begin{center}\includegraphics[height=3cm]{\neudata@logo}\end{center}
+  \noindent\makebox[\textwidth][c]{\includegraphics[height=4.2cm]{\neudata@logo}}\par
   \vspace{1.5em}
   {\large\bfseries\color{\ifneudata@styleone NeudataNavy\else NeudataBlue\fi}Copyright \textcopyright\ Neudata, \the\year\par}\medskip
-  {\ttfamily\small
+  {\ttfamily\small\frenchspacing
   All property rights and copyright are reserved.\par\smallskip
   This document contains proprietary data, information, and materials developed by Neudata for
   dedicated use only and may not be communicated, copied, reproduced, distributed, published, or
