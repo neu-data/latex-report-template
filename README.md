@@ -60,13 +60,14 @@ latexmk -pdf main.tex
 
 \title{Report Title}
 \subtitle{Short descriptive subtitle}
-\author{Analyst Name, Neudata Consulting Ltd}
+\author{Analyst Name}
+\affiliation{Neudata Consulting Ltd}
 \client{Client organisation}
 \reference{NDC-2026-000}
 \version{1.0}
 \confidentiality{Confidential}
 % \date{29-04-2026}                   % defaults to today, DD-MM-YYYY
-bstract{Executive summary shown in a box after the cover.}
+\abstract{Executive summary shown in a box after the cover.}
 
 \begin{document}
 \maketitle
