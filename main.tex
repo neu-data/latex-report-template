@@ -1,0 +1,84 @@
+% ---------------------------------------------------------------------------
+% Neudata Consulting Ltd — report template (Overleaf ready)
+% Class options: report | proposal | note, draft, nocover
+% ---------------------------------------------------------------------------
+\documentclass[report]{neudata}
+
+\usepackage[style=authoryear, backend=biber, maxcitenames=2]{biblatex}
+\addbibresource{references.bib}
+
+\title{Report Title}
+\subtitle{Short descriptive subtitle}
+\author{Analyst Name, Neudata Consulting Ltd}
+\client{Client organisation}
+\reference{NDC-2026-000}
+\version{1.0}
+\confidentiality{Confidential}
+% \date{29-04-2026}   % defaults to today, DD-MM-YYYY
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\section*{Executive summary}
+\addcontentsline{toc}{section}{Executive summary}
+
+One-paragraph summary of the question, data, approach and headline finding, written for a
+non-technical decision-maker.
+
+\begin{keyfindings}
+  \begin{itemize}
+    \item Finding one, stated plainly with its size and uncertainty.
+    \item Finding two.
+    \item Recommendation or implication for the client.
+  \end{itemize}
+\end{keyfindings}
+
+\section{Introduction}
+
+Describe the background, the client's objective and the questions this report answers.
+Cite sources as usual \parencite{lumley2004}.
+
+\section{Data and methods}
+
+\subsection{Data sources}
+Summarise data sources, inclusion criteria and variables.
+
+\subsection{Statistical analysis}
+Describe the statistical methods. Refer to the analysis plan for full detail.
+
+\begin{neudatanote}[Reproducibility]
+  All results in this report were produced from version-controlled code.
+\end{neudatanote}
+
+\section{Results}
+
+Table~\ref{tab:summary} summarises the example results.
+
+\begin{table}[ht]
+  \centering
+  \caption{Example estimates by group.}
+  \label{tab:summary}
+  \begin{tabular}{lrrr}
+    \toprule
+    \neudataheader \neudatath{Group} & \neudatath{N} & \neudatath{Estimate (\%)} & \neudatath{95\% CI} \\
+    \midrule
+    Overall & 1,200 & 84.2 & 81.9--86.3 \\
+    Urban   &   640 & 88.1 & 85.3--90.4 \\
+    Rural   &   560 & 79.8 & 76.2--83.0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Discussion and recommendations}
+
+Interpret the results, note limitations and set out recommendations.
+
+\printbibliography[heading=bibintoc]
+
+\neudatacopyrightpage
+
+\end{document}
